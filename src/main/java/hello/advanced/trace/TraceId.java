@@ -27,7 +27,7 @@ public class TraceId {
 
     // 다음 level를 생성하기 위함
     // traceId는 같지만 level 깊이를 하나 주기 위함
-    private TraceId createNextId() {
+    public TraceId createNextId() {
         return new TraceId(id, level + 1);
     }
 
