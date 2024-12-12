@@ -20,4 +20,11 @@
 
 ## 2. 동시성문제 해결
 * ThreadLocal 사용
+```java
+private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
+
+object = threadLocal.get();
+threadLocal.set(object);
+threadLocal.remove();
+```
 
