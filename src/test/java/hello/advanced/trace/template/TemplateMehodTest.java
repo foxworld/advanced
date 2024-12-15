@@ -70,7 +70,7 @@ public class TemplateMehodTest {
                 log.info("비즈니스 로직2  실행");
             }
         };
-        log.info("클래스 이름1={}", template2.getClass());
+        log.info("클래스 이름2={}", template2.getClass());
         template2.execute();
     }
 }
