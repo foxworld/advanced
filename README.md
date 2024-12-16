@@ -18,13 +18,17 @@
   - 트랜잭션 ID 여기서는 하나의 HTTP 요청이 시작해서 끝날 때 까지를 하나의 트랜잭션이 라 함
 
 
-## 2. 동시성문제 해결
-* ThreadLocal 사용
+## 2. 버전
+* v0 : 로그없이 로직만 존재
+* v1 : 클래스마다 로그코드 적용
+* v2 : 로그남길때 동일한 프로세스 로그인지 확인을 위해  uuid 적용(동시성문제 발생)
+* v3 : ThreadLocal 을 위용한 동시성문제 해결
+  - ThreadLocal : Thread 마다 메모리 할당
 ```java
 private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
-
 object = threadLocal.get();
-threadLocal.set(object);
+threadLocal.set(T);
 threadLocal.remove();
-```
+``` 
+* v4 : 로그를 남기는 로직 중복을 제외하기 위해 추상클래스를 적용하여 중복 제외
 
