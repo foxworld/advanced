@@ -26,8 +26,9 @@
   - ThreadLocal : Thread 마다 메모리 할당
 ```java
     private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
-    T obj = threadLocal.get();
     threadLocal.set(obj);
+
+    T obj = threadLocal.get();
     threadLocal.remove();
 ``` 
 * v4 : 로그 남기는 증복 로직을 제거하기 위해 추상클래스를 적용

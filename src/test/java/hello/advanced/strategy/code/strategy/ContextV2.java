@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class ContextV1 {
+public class ContextV2 {
 
     private final Strategy strategy;
 
