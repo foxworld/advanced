@@ -54,8 +54,7 @@ public class ContextV1Test {
     }
 
     /**
-     * 람다로 변경
-     * 메서드가 한개만 있어야 가능
+     * 코드 간편 정리
      */
     @Test
     void strategyV3() {
@@ -76,6 +75,10 @@ public class ContextV1Test {
         context2.execute();
     }
 
+    /**
+     * 람다로 변경
+     * 메서드가 한개만 있어야 가능
+     */
     @Test
     void strategyV4() {
         ContextV1 context1 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
