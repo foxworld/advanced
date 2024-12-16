@@ -26,9 +26,11 @@
   - ThreadLocal : Thread 마다 메모리 할당
 ```java
     private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
+    
     threadLocal.set(obj);
 
     T obj = threadLocal.get();
+    
     threadLocal.remove();
 ``` 
 * v4 : 로그 남기는 증복 로직을 제거하기 위해 추상클래스를 적용
@@ -43,6 +45,8 @@
     - 상속에 의한 부모클래스를 가지고 있어야 함
     - 상속을 받지만 부모클래스를 사용하지 않음
     - 부모클래스가 변경이 되면자식클래스 영향을 받음
-* 
 * 전략패턴
-* 
+* 템플릿 콜백 패턴 
+  - 콜백정의 : 다른 코의 인수로서 넘겨주는 실행 가능한 코드, 콜백을 넘겨받는 코드는 이 콜백을 필요해 따라 즉시 실행할 수도 있도 아니면 나중에 실행할 수도 있다
+  - **`Callback`** 은 코드가 호출(**`call`**)은 되는데 코드를 넘겨준 곳의 뒤(**`back`**)에서 실행된다는 뜻
+  - 
