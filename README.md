@@ -19,16 +19,29 @@
 
 
 ## 2. 버전
-* v0 : 로그없이 로직만 존재
+* v0 : 로그없이 핵심 로직만 존재
 * v1 : 클래스마다 로그코드 적용
 * v2 : 로그남길때 동일한 프로세스 로그인지 확인을 위해  uuid 적용(동시성문제 발생)
 * v3 : ThreadLocal 을 위용한 동시성문제 해결
   - ThreadLocal : Thread 마다 메모리 할당
 ```java
-private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
-object = threadLocal.get();
-threadLocal.set(T);
-threadLocal.remove();
+    private final ThreadLocal<T> threadLocal = new ThreadLocal<>();
+    T obj = threadLocal.get();
+    threadLocal.set(obj);
+    threadLocal.remove();
 ``` 
-* v4 : 로그를 남기는 로직 중복을 제외하기 위해 추상클래스를 적용하여 중복 제외
-
+* v4 : 로그 남기는 증복 로직을 제거하기 위해 추상클래스를 적용
+  - 핵심로직과 템플릿호출를 사용
+  - GoF 디자인패턴
+  - 목적
+    - 작업에서 알고리즘을 골격을 정의하고 일부 단계글 하위 클래스를 연기
+    - 부모클래스에서 알고리즘의 골격인 템플릿을 정의하고, 일부 변경되는 로직은 자식클래스에 정의
+    - 자식클래스가 알고리즘의 전체 구조를 변경하지 않고 특정부분만 재정의 할 수 있음
+    - 상속과 오버라이딩을 통한 다형성으로 문제를 해결
+  - 기존로직의 단점
+    - 상속에 의한 부모클래스를 가지고 있어야 함
+    - 상속을 받지만 부모클래스를 사용하지 않음
+    - 부모클래스가 변경이 되면자식클래스 영향을 받음
+* 
+* 전략패턴
+* 
