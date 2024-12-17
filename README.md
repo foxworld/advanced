@@ -2,6 +2,7 @@
 * 변수생성 : Ctrl + Alt + v
 * 리펙토리(항수명 추가) : Alt + Enter
 * 테스트클래스 생성 : Ctrl + Shift + t
+* Contractor 생성 : Alt + Insert
 
 # 스프링 핵심 원리 - 고급편
 ## 1. 로그생성 요구사항
